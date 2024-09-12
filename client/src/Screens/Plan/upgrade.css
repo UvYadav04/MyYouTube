@@ -1,0 +1,17 @@
+.coupon {
+    background-image: url('../../photos/coupon.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateZ(-25deg);
+    z-index: 10;
+
+
+    h1 {
+        text-shadow: 1px 1px white;
+    }
+
+    h2 {
+        color: yellow
+    }
+}

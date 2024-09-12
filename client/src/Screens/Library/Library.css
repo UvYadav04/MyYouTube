@@ -1,0 +1,15 @@
+.title_container_LibraryPage b {
+    margin: auto 0.5rem;
+    padding: auto 0.5rem;
+    font-size: medium;
+    color: #000000;
+}
+
+.container_videoList_LibraryPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+}

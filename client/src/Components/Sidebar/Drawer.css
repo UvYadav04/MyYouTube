@@ -1,0 +1,18 @@
+.drawer {
+    height: calc(100vh - 3.5rem);
+}
+
+.top ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 2% 5%;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+li:hover {
+    background-color: rgb(92, 92, 92);
+}
