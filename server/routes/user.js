@@ -1,0 +1,18 @@
+const express = require('express')
+const route = express.Router()
+const { login, updatepoints, sendotp } = require('../controllers/Auth')
+const { updatechannel, fetchallchannels } = require('../controllers/Channel')
+const { upgrade, checkvalidity } = require('../controllers/upgrader')
+const auth = require('../middleware/auth')
+const { getallusers, allactiveusers } = require('../controllers/users')
+
+route.post('/login', login)
+route.patch('/update/:id', updatechannel)
+route.get('/fetchallchannels', fetchallchannels)
+route.patch('/upgradeplan', auth, upgrade)
+route.patch('/checkvalidity', checkvalidity)
+route.patch('/checkpoints', updatepoints)
+route.get('/getusers', getallusers)
+route.get('/activeusers', allactiveusers)
+route.post('/sendotp', sendotp)
+module.exports = route
