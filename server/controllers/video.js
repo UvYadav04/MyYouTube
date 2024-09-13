@@ -8,9 +8,9 @@ const ffmpeg = require('fluent-ffmpeg');
 const baseDir = path.dirname(require.main.filename)
 const uploadDir = path.join(baseDir, 'uploads')
 
-// if (!fs.existsSync(uploadDir)) {
-//     fs.mkdirSync(uploadDir, { recursive: true });
-// }
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const uploadvideo = async (req, res) => {
     // console.log(__dirname)
