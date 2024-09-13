@@ -12,7 +12,7 @@ import { Link } from "react-router-dom"
 import { checkpoints } from '../../actions/userpoints';
 
 const Videoplayer = ({ baseName, commentref }) => {
-    const url = `http://localhost:3000/uploads/${baseName}`;
+    const url = `https://my-you-tube-sigma.vercel.app/uploads/${baseName}`;
     const videoRef = useRef(null);
     const playerRef = useRef(null);
     const [qualityLevels, setQualityLevels] = useState([]);
