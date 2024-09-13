@@ -8,9 +8,19 @@ const ffmpeg = require('fluent-ffmpeg');
 const baseDir = path.dirname(require.main.filename)
 const uploadDir = path.join(baseDir, 'uploads')
 
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-}
+// if (!fs.existsSync(uploadDir)) {
+//     fs.mkdirSync(uploadDir, { recursive: true });
+// }
+
+const getallvideos = async (req, res) => {
+    try {
+        const files = await videofile.find();
+        res.status(200).json(files);
+    } catch (error) {
+        res.status(500).json({ message: "An error occurred.", error: error.message });
+    }
+};
+
 
 const uploadvideo = async (req, res) => {
     // console.log(__dirname)
@@ -24,9 +34,9 @@ const uploadvideo = async (req, res) => {
         const outputDir = path.join(uploadDir, baseName);
         // console.log(baseName)
 
-        if (!fs.existsSync(outputDir)) {
-            fs.mkdirSync(outputDir, { recursive: true });
-        }
+        // if (!fs.existsSync(outputDir)) {
+        //     fs.mkdirSync(outputDir, { recursive: true });
+        // }
 
         // Convert video to HLS format
         await convertToHLS(inputFilePath, outputDir);
@@ -51,14 +61,6 @@ const uploadvideo = async (req, res) => {
     }
 };
 
-const getallvideos = async (req, res) => {
-    try {
-        const files = await videofile.find();
-        res.status(200).json(files);
-    } catch (error) {
-        res.status(500).json({ message: "An error occurred.", error: error.message });
-    }
-};
 
 // Convert video to HLS format
 const convertToHLS = (inputFilePath, outputDir) => {
