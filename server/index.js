@@ -86,6 +86,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 app.get('/', (req, res) => {
     res.send("welcome to backend")
 })
+
 app.use('/user', userroute)
 app.use('/video', videoroute)
 app.use('/comment', commentroute)
