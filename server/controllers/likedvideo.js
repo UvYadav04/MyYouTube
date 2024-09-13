@@ -1,4 +1,4 @@
-const likedvideo = require("../Models/likevideo.js")
+const likedvideo = require("../models/likevideo")
 
 const likedvideocontroller = async (req, res) => {
     const likedvidedata = req.body;

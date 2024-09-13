@@ -1,4 +1,4 @@
-const watchlater = require("../Models/watchlater.js");
+const watchlater = require("../models/watchlater");
 
 const watchlatercontroller = async (req, res) => {
     const watchlaterdata = req.body;
