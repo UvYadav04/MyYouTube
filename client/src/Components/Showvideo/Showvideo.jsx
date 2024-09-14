@@ -10,7 +10,7 @@ const Showvideo = ({ vid }) => {
   return (
     <div className='bg-white p-2'>
       <Link to={`/videopage/${vid._id}`}>
-        <video src={`http://localhost:3000/${vid?.filepath}`} className='video_ShowVideo' />
+        <video src={`https://my-you-tube-sigma.vercel.app/${vid?.filepath}`} className='video_ShowVideo' />
       </Link>
       <div className="video_description mt-2">
         <div className="Chanel_logo_App">
