@@ -5,7 +5,7 @@ const SocketContext = createContext();
 
 export default function SocketProvider(props) {
     const socket = useMemo(() => {
-        return io("https://my-you-tube-sigma.vercel.app", {
+        return io.connect("https://my-you-tube-sigma.vercel.app", {
             transports: ['websocket']
         });
     }, []);
