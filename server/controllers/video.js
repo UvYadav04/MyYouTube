@@ -34,9 +34,9 @@ const uploadvideo = async (req, res) => {
         const outputDir = path.join(uploadDir, baseName);
         // console.log(baseName)
 
-        // if (!fs.existsSync(outputDir)) {
-        //     fs.mkdirSync(outputDir, { recursive: true });
-        // }
+        if (!fs.existsSync(outputDir)) {
+            fs.mkdirSync(outputDir, { recursive: true });
+        }
 
         // Convert video to HLS format
         await convertToHLS(inputFilePath, outputDir);
